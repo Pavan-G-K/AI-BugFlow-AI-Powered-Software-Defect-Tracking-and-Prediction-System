@@ -1,0 +1,14 @@
+# Java
+backend/target/
+backend/data/
+*.class
+# Node
+frontend/node_modules/
+frontend/dist/
+# Python
+ml-service/.venv/
+__pycache__/
+*.pyc
+.env
+.idea/
+.vscode/

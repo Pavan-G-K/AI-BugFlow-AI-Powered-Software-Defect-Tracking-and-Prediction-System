@@ -1,0 +1,18 @@
+services:
+  backend:
+    build: ./backend
+    ports: ["8080:8080"]
+    environment:
+      ML_SERVICE_URL: http://ml-service:8001
+    volumes:
+      - bugflow-data:/app/data
+    depends_on: [ml-service]
+  ml-service:
+    build: ./ml-service
+    ports: ["8001:8001"]
+  frontend:
+    build: ./frontend
+    ports: ["5173:5173"]
+    depends_on: [backend]
+volumes:
+  bugflow-data:
